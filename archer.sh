@@ -14,10 +14,13 @@ function symlink_as_is() {
     for file in $(ls $1); do ln -sf $1/$file $2/$file; done
 }
 
+status_line "updating" "bin" "$HOME/.local/bin"
+symlink_as_is $dot_dir/bin $HOME/.local/bin
+
 for item in rofi xbindkeys bspwm polybar ranger alacritty ranger htop; do
     target="$cfg_dir/$item"
-    status_line "updating" "$item" "$target" 
-    symlink_as_is $dot_dir/$item "$target"
+    status_line "updating" $item $target
+    symlink_as_is $dot_dir/$item $target
 done
 
 vim_dir="$HOME/.vim"
