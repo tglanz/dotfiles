@@ -1,0 +1,140 @@
+"/home/share/scripts/toggle-language.sh"
+    Alt + F1
+
+"/home/share/scripts/launch-rofi.sh"
+    Alt + F2 
+
+"alacritty"
+    Mod4 + Return
+
+"alacritty"
+    Mod4 + c:104
+
+"bspc quit"
+    Alt + Mod4 + q
+
+"bspc node -c"
+    Mod4 + q
+
+"bspc wm -r"
+    Alt + Mod4 + r
+
+"bspc desktop -l next"
+    Mod4 + m
+
+# ~~ window states
+
+"bspc node -t tiled"
+    Mod4 + Shift + t
+
+"bspc node -t floating"
+    Mod4 + Shift + f
+
+# ~~ focus bspc nodes
+
+"bspc node -f west"
+    Mod4 + Left
+
+"bspc node -f north"
+    Mod4 + Up
+
+"bspc node -f east"
+    Mod4 + Right
+
+"bspc node -f south"
+    Mod4 + Down
+
+# ~~ sound
+
+"pactl set-sink-mute 0 toggle"
+    XF86AudioMute
+
+"pactl set-sink-volume 0 +5%"
+    XF86AudioRaiseVolume
+
+"pactl set-sink-volume 0 -5%"
+    XF86AudioLowerVolume
+
+# ~~ switch bspc nodes
+
+"bspc node -s west"
+    Shift+Mod4 + Left
+"bspc node -s north"
+    Shift+Mod4 + Up
+"bspc node -s east"
+    Shift+Mod4 + Right
+"bspc node -s south"
+    Shift+Mod4 + Down
+
+"bspc node -z left -20 0"
+    Mod4+Alt + Left
+"bspc node -z bottom 0 20"
+    Mod4+Alt + Down
+"bspc node -z top 0 -20"
+    Mod4+Alt + Up
+"bspc node -z right 20 0"
+    Mod4+Alt + Right
+
+"bspc desktop -f 1"
+    Mod4 + c:10
+"bspc desktop -f 2"
+    Mod4 + c:11
+"bspc desktop -f 3"
+    Mod4 + c:12
+"bspc desktop -f 4"
+    Mod4 + c:13
+"bspc desktop -f 5"
+    Mod4 + c:14
+"bspc desktop -f 6"
+    Mod4 + c:15
+"bspc desktop -f 7"
+    Mod4 + c:16
+"bspc desktop -f 8"
+    Mod4 + c:17
+"bspc desktop -f 9"
+    Mod4 + c:18
+"bspc desktop -f 0"
+    Mod4 + c:19
+
+"bspc desktop -f 1"
+    Mod4 + c:87
+"bspc desktop -f 2"
+    Mod4 + c:88
+"bspc desktop -f 3"
+    Mod4 + c:89
+"bspc desktop -f 4"
+    Mod4 + c:83
+"bspc desktop -f 5"
+    Mod4 + c:84
+"bspc desktop -f 6"
+    Mod4 + c:85
+"bspc desktop -f 7"
+    Mod4 + c:79
+"bspc desktop -f 8"
+    Mod4 + c:80
+"bspc desktop -f 9"
+    Mod4 + c:81
+"bspc desktop -f 0"
+    Mod4 + c:90
+
+
+"bspc node -d 1"
+    Shift+Mod4 + c:10
+"bspc node -d 2"
+    Shift+Mod4 + c:11
+"bspc node -d 3"
+    Shift+Mod4 + c:12
+"bspc node -d 4"
+    Shift+Mod4 + c:13
+"bspc node -d 5"
+    Shift+Mod4 + c:14
+"bspc node -d 6"
+    Shift+Mod4 + c:15
+"bspc node -d 7"
+    Shift+Mod4 + c:16
+"bspc node -d 8"
+    Shift+Mod4 + c:17
+"bspc node -d 9"
+    Shift+Mod4 + c:18
+"bspc node -d 0"
+    Shift+Mod4 + c:19
