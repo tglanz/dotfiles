@@ -1,0 +1,31 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'frazrepo/vim-rainbow'
+Plugin 'junegunn/fzf'
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()
+filetype plugin indent on
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+colorscheme desert
+set background=dark
+
+syntax on
+set number
+
+set hlsearch
+set ignorecase
+set smartcase
+
+nmap <f2> :set keymap=<cr>
+nmap <f3> :set keymap=hebrew<cr>
+
+"
+" let g:rainbow_active = 1

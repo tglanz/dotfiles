@@ -1,0 +1,22 @@
+#! /bin/sh
+
+# uses ~/.xbindkeysrc
+xbindkeys -p -f $XDG_CONFIG_HOME/xbindkeys/config
+
+~/.local/bin/spread-bspwm-desktops-accross-monitors.sh
+~/.local/bin/set-random-background.sh
+
+$XDG_CONFIG_HOME/polybar/launch.sh
+
+bspc config border_width         2
+bspc config window_gap           6 
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# some jvm stuff whitelists the window managers they support, fake us to be compiz
+wmname compiz
+
+# transparency - used to be compton
+# picom &
