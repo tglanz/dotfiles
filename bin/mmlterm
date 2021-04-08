@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mlterm -A --term xterm-256color -fontsize=12 --deffont="MesloLGS NF" --bg=#17191a --fg=#aaaaaa
