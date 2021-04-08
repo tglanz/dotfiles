@@ -5,7 +5,16 @@ dot_dir="$(realpath $(dirname $0))"
 cfg_dir="$XDG_CONFIG_HOME"
 [[ -z $cfg_dir ]] && cfg_dir="$HOME/.config";
 
-echo "Preparing vim"
+echo "Updating rofi"
+rofi_dir="$cfg_dir/rofi"
+mkdir -p $rofi_dir
+for file in config.rasi themes; do
+    ln -sf $dot_dir/rofi/$file $rofi_dir/$file
+done
+
+exit
+
+echo "Updating vim"
 vim_dir="$HOME/.vim"
 mkdir -p $vim_dir
 ln -sf $dot_dir/vim/vimrc $vim_dir/vimrc
