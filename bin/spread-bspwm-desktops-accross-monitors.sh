@@ -1,5 +1,7 @@
 #!/bin/bash
 
+autorandr -c
+
 monitors=($(xrandr -q | grep "^.* connected" | cut -d ' ' -f 1 | sort))
 
 count=${#monitors[@]}
