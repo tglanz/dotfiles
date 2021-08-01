@@ -1,0 +1,3 @@
+#!/usr/bin/bpftrace
+
+tracepoint:syscalls:sys_exit_read /args->ret/ { @[comm] = sum(args->ret); }

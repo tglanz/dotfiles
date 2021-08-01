@@ -1,0 +1,3 @@
+#!/usr/bin/bpftrace
+
+profile:hz:99 /pid == 189/ { @[ustack] = count(); }

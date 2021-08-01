@@ -1,0 +1,3 @@
+#!/usr/bin/bpftrace
+
+software:faults:1 { @[comm] = count(); }
