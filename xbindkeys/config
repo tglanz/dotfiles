@@ -1,7 +1,7 @@
-"/home/share/scripts/toggle-language.sh"
+"~/.local/bin/toggle-language.sh"
     Alt + F1
 
-"/home/share/scripts/launch-rofi.sh"
+"~/.local/bin/launch-rofi.sh"
     Alt + F2 
 
 "alacritty"
