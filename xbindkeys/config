@@ -1,7 +1,8 @@
 "~/.local/bin/toggle-language.sh"
     Alt + F1
 
-"~/.local/bin/launch-rofi.sh"
+# rofi uses the configuration at XDG_CONFIG_HOME/rofi
+"rofi -show combi"
     Alt + F2 
 
 "alacritty"
