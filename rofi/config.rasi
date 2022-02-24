@@ -1,6 +1,8 @@
 
 configuration {
 	modi: "run,ssh,window,combi";
+	sort: true;
+
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
@@ -28,7 +30,6 @@ configuration {
 /*	drun-url-launcher: "xdg-open";*/
 /*	disable-history: false;*/
 /*	ignored-prefixes: "";*/
-/*	sort: false;*/
 /*	sorting-method: "normal";*/
 /*	case-sensitive: false;*/
 /*	cycle: true;*/
