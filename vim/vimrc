@@ -6,7 +6,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'junegunn/fzf'
 Plugin 'scrooloose/nerdtree'
-
 call vundle#end()
 filetype plugin indent on
 
