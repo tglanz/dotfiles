@@ -18,7 +18,7 @@ function symlink_as_is() {
 status_line "updating" "bin" "$HOME/.local/bin"
 symlink_as_is $dot_dir/bin $HOME/.local/bin
 
-for item in rofi xbindkeys bspwm polybar alacritty ranger htop qutebrowser; do
+for item in nvim rofi xbindkeys bspwm polybar alacritty ranger htop qutebrowser; do
     target="$cfg_dir/$item"
     status_line "updating" $item $target
     symlink_as_is $dot_dir/$item $target

@@ -3,7 +3,7 @@
 
 # rofi uses the configuration at XDG_CONFIG_HOME/rofi
 "rofi -show combi"
-    Alt + F2 
+    Mod4 + space 
 
 "alacritty"
     Mod4 + Return
