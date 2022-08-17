@@ -4,6 +4,16 @@ return require('packer').startup(function(use)
   use 'EdenEast/nightfox.nvim'
 
   use {
+    'phaazon/hop.nvim',
+    branch = 'v2',
+    config = function()
+      require('hop').setup {
+        keys = 'qweasdzxclkjh'
+      }
+    end
+  }
+
+  use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = {
       {'nvim-lua/plenary.nvim'},
