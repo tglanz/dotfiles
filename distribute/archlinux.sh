@@ -12,7 +12,9 @@ function status_line() {
 
 function symlink_as_is() {
     mkdir -p $2
-    for file in $(ls $1); do ln -sf $1/$file $2/$file; done
+    for file in $(ls $1); do 
+      ln -sf $1/$file $2/$file 
+    done
 }
 
 status_line "updating" "bin" "$HOME/.local/bin"
