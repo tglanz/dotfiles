@@ -15,6 +15,7 @@ servers = {
   lspconfig.gopls,
   lspconfig.bashls,
   lspconfig.tsserver,
+  lspconfig.csharp_ls,
 }
 
 for _, server in ipairs(servers) do 
