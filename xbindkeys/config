@@ -36,14 +36,26 @@
 "bspc node -f west"
     Mod4 + Left
 
+"bspc node -f west"
+    Mod4 + h
+
 "bspc node -f north"
     Mod4 + Up
+
+"bspc node -f north"
+    Mod4 + k 
 
 "bspc node -f east"
     Mod4 + Right
 
+"bspc node -f east"
+    Mod4 + l 
+
 "bspc node -f south"
     Mod4 + Down
+
+"bspc node -f south"
+    Mod4 + j
 
 # ~~ sound
 
