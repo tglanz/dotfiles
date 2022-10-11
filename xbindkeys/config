@@ -35,25 +35,21 @@
 
 "bspc node -f west"
     Mod4 + Left
-
 "bspc node -f west"
     Mod4 + h
 
 "bspc node -f north"
     Mod4 + Up
-
 "bspc node -f north"
     Mod4 + k 
 
 "bspc node -f east"
     Mod4 + Right
-
 "bspc node -f east"
     Mod4 + l 
 
 "bspc node -f south"
     Mod4 + Down
-
 "bspc node -f south"
     Mod4 + j
 
@@ -72,12 +68,23 @@
 
 "bspc node -s west"
     Shift+Mod4 + Left
+"bspc node -s west"
+    Shift+Mod4 + h
+
 "bspc node -s north"
     Shift+Mod4 + Up
+"bspc node -s north"
+    Shift+Mod4 + k
+
 "bspc node -s east"
     Shift+Mod4 + Right
+"bspc node -s east"
+    Shift+Mod4 + l 
+
 "bspc node -s south"
     Shift+Mod4 + Down
+"bspc node -s south"
+    Shift+Mod4 + j 
 
 "bspc node -z left -20 0"
     Mod4+Alt + Left
