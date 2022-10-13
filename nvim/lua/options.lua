@@ -10,4 +10,4 @@ vim.opt.expandtab = true
 vim.opt.background = dark
 
 vim.g.rainbow_active = 1
-
+vim.opt.laststatus = 3

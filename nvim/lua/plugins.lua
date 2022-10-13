@@ -34,16 +34,21 @@ return require('packer').startup(function(use)
     requires = {
       {'nvim-lua/plenary.nvim'},
       {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-      }
+    }
   }
 
+  -- language servers
   use 'neovim/nvim-lspconfig'
-  use 'simrat39/rust-tools.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'mfussenegger/nvim-dap'
 
-  use 'ray-x/go.nvim'
-  use 'ray-x/guihua.lua'
+  -- debugging
+  use 'mfussenegger/nvim-dap'
+  use {
+    "rcarriga/nvim-dap-ui",
+    requires = {"mfussenegger/nvim-dap"}
+  }
+
+  -- use 'ray-x/go.nvim'
+  -- use 'ray-x/guihua.lua'
 
   local protocol = require'vim.lsp.protocol'
 
