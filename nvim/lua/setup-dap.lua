@@ -16,11 +16,11 @@ end)
 vim.keymap.set('n', '<Leader>dr', dap.repl.open)
 vim.keymap.set('n', '<Leader>dl', dap.run_last)
 
-dap.adapters.python = {
-  type = 'executable';
-  command = 'python';
-  args = { '-m', 'debugpy.adapter' }
-}
+-- dap.adapters.python = {
+--   type = 'executable';
+--   command = 'python3';
+--   args = { '-m', 'debugpy.adapter' }
+-- }
 
 -- go, delve
 
