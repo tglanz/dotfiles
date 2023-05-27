@@ -1,7 +1,7 @@
 local dap = require('dap')
 local dap_vscode = require('dap.ext.vscode')
 
--- dap.set_log_level('DEBUG')
+dap.set_log_level('TRACE')
 
 vim.keymap.set('n', '<F5>', dap.continue)
 vim.keymap.set('n', '<leader><F5>', dap.disconnect)
