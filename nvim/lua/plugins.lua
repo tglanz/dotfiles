@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
 
   -- language servers
   use 'neovim/nvim-lspconfig'
+  use 'lvimuser/lsp-inlayhints.nvim'
 
   -- debugging
   use 'mfussenegger/nvim-dap'
