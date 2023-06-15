@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
   }
 
   -- language servers
+  use 'folke/neodev.nvim'
   use 'neovim/nvim-lspconfig'
   use 'lvimuser/lsp-inlayhints.nvim'
 

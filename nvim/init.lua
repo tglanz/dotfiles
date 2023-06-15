@@ -6,6 +6,7 @@ vim.g.maplocalleader = ';'
 
 require("setup-diagnostics")
 require("setup-telescope")
+require("setup-neodev") -- This must be before lspconfig
 require("setup-lspconfig")
 require("setup-cmp")
 require("setup-nightfox")
