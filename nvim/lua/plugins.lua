@@ -68,4 +68,10 @@ return require('packer').startup(function(use)
       { "onsails/lspkind-nvim" },
     },
   }
+
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = "*",
+  }
+
 end)
