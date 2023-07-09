@@ -17,15 +17,18 @@ function symlink_as_is() {
     done
 }
 
+# Symlink the binaries
 status_line "updating" "bin" "$HOME/.local/bin"
 symlink_as_is $dot_dir/bin $HOME/.local/bin
 
+# Symlink standard configurations
 for item in nvim rofi xbindkeys bspwm polybar alacritty ranger htop qutebrowser tmux; do
     target="$cfg_dir/$item"
     status_line "updating" $item $target
     symlink_as_is $dot_dir/$item $target
 done
 
+# vim 
 vim_dir="$HOME/.vim"
 status_line "updating" "vim" "$vim_dir"
 mkdir -p $vim_dir
@@ -37,3 +40,7 @@ else
     git -C $vim_dir/bundle/Vundle.vim pull >/dev/null
 fi
 vim +PluginInstall +qall
+
+# neovim
+$script_dir/install-nvim-packer.sh
+
