@@ -42,5 +42,5 @@ fi
 vim +PluginInstall +qall
 
 # neovim
-$script_dir/install-nvim-packer.sh
+$script_dir/install-nvim-packages.sh
 
