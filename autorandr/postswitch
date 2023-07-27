@@ -1,0 +1,5 @@
+#!/bin/sh
+
+config_path=$(realpath ${XDG_CONFIG_HOME:-~/.config})
+bspwmrc_path=$config_path/bspwm/bspwmrc
+$bspwmrc_path

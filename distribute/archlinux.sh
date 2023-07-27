@@ -43,4 +43,4 @@ vim +PluginInstall +qall
 
 # neovim
 $script_dir/install-nvim-packages.sh
-
+$script_dir/distribute-autorandr.sh
