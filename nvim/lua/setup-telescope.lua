@@ -10,6 +10,11 @@ vim.keymap.set('n', '<C-f>', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>ft', builtin.help_tags, opts)
 
 telescope.setup {
+  pickers = {
+    find_files = {
+      hidden = true
+    }
+  },
   extensions = {
     ["ui-select"] = {
       themes.get_dropdown {
