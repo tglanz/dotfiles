@@ -2,7 +2,12 @@
 
 pacman -Suy man
 
+pacman -Suy ntpd
+systemctl enable --now ntpd
+
 pacman -Suy bluez bluez-utils
+systemctl enable --now bluetooth
+
 pacman -Suy alsa-utils pipewire pipewire-docs pipewire-audio wireplumber pipewire-alsa
 pacman -Suy libinput
 
