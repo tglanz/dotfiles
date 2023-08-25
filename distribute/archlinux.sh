@@ -17,6 +17,11 @@ function symlink_as_is() {
     done
 }
 
+
+function symlink_as_is2() {
+    ln -sf $1 $2
+}
+
 # Symlink the binaries
 status_line "updating" "bin" "$HOME/.local/bin"
 symlink_as_is $dot_dir/bin $HOME/.local/bin
@@ -25,7 +30,7 @@ symlink_as_is $dot_dir/bin $HOME/.local/bin
 for item in nvim rofi xbindkeys bspwm polybar alacritty ranger htop qutebrowser tmux; do
     target="$cfg_dir/$item"
     status_line "updating" $item $target
-    symlink_as_is $dot_dir/$item $target
+    symlink_as_is2 $dot_dir/$item $target
 done
 
 # vim 
