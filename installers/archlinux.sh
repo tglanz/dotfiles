@@ -11,7 +11,7 @@ systemctl enable --now bluetooth
 pacman -Suy alsa-utils pipewire pipewire-docs pipewire-audio wireplumber pipewire-alsa
 pacman -Suy libinput
 
-pacman -Suy jdk-openjdk
+pacman -Suy jdk-openjdk maven
 pacman -Suy docker docker-compose
 pacman -Suy go gopls delve 
 pacman -Suy terraform
