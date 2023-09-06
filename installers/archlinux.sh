@@ -13,6 +13,7 @@ pacman -Suy libinput
 
 pacman -Suy jdk-openjdk maven
 pacman -Suy docker docker-compose
+pacman -Suy helm kubectl
 pacman -Suy go gopls delve 
 pacman -Suy terraform
 pacman -Suy autorandr
