@@ -30,11 +30,11 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = {
-      {'nvim-lua/plenary.nvim'},
-      {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
-      {'nvim-telescope/telescope-ui-select.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
+      { 'nvim-telescope/telescope-ui-select.nvim' },
     }
   }
 
@@ -47,13 +47,13 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'
   use {
     "rcarriga/nvim-dap-ui",
-    requires = {"mfussenegger/nvim-dap"}
+    requires = { "mfussenegger/nvim-dap" }
   }
 
   -- use 'ray-x/go.nvim'
   -- use 'ray-x/guihua.lua'
 
-  local protocol = require'vim.lsp.protocol'
+  local protocol = require 'vim.lsp.protocol'
 
   use {
     "hrsh7th/nvim-cmp",
@@ -73,5 +73,4 @@ return require('packer').startup(function(use)
     "akinsho/toggleterm.nvim",
     tag = "*",
   }
-
 end)

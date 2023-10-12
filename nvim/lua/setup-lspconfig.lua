@@ -28,6 +28,7 @@ local servers = {
   lspconfig.csharp_ls,
   lspconfig.clangd,
   lspconfig.terraformls,
+  lspconfig.yamlls,
 }
 
 for _, server in ipairs(servers) do

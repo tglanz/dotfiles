@@ -16,6 +16,38 @@ end)
 vim.keymap.set('n', '<Leader>dr', dap.repl.open)
 vim.keymap.set('n', '<Leader>dl', dap.run_last)
 
+-- js
+
+dap.adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "node",
+    args = { "/opt/js-debug-dap/js-debug/src/dapDebugServer.js", "${port}" },
+  }
+}
+
+dap.configurations.javascript = {
+  {
+    type = "pwa-node",
+    request = "launch",
+    name = "Launch file",
+    program = "${file}",
+    cwd = "${workspaceFolder}",
+  }
+}
+
+-- dap.configurations.javascript = {
+--   {
+--     type = "node",
+--     request = "launch",
+--     name = "Launch file",
+--     program = "${file}",
+--     cwd = "${workspaceFolder}",
+--   }
+-- }
+
 -- dap.adapters.python = {
 --   type = 'executable';
 --   command = 'python3';
@@ -62,9 +94,9 @@ dap.configurations.python = {
 -- codelldb
 
 
-local codelldb_extension_home = os.getenv("CODELLDB_EXTENSION_HOME") or "/opt/codelldb/extension"
+local codelldb_extension_home         = os.getenv("CODELLDB_EXTENSION_HOME") or "/opt/codelldb/extension"
 
-dap.adapters.codelldb = {
+dap.adapters.codelldb                 = {
   type = 'server',
   port = '5677',
   executable = {
@@ -83,14 +115,15 @@ local codelldb_default_configurations = {
   },
 }
 
-dap.configurations.c    = codelldb_default_configurations  
-dap.configurations.cpp  = codelldb_default_configurations
-dap.configurations.rust = codelldb_default_configurations
+dap.configurations.c                  = codelldb_default_configurations
+dap.configurations.cpp                = codelldb_default_configurations
+dap.configurations.rust               = codelldb_default_configurations
 
 -- automatically load .vscode/launch.json
 
 dap_vscode.load_launchjs('.vscode/launch.json', {
-  delve = {'go'},
-  python = {'python'},
-  codelldb = {'c', 'cpp', 'rust'},
+  ["pwa-node"] = { 'javascript', 'typescript' },
+  delve = { 'go' },
+  python = { 'python' },
+  codelldb = { 'c', 'cpp', 'rust' },
 })
