@@ -10,7 +10,7 @@ systemctl enable --now bluetooth
 
 pacman -Suy autorandr
 
-pacman -Suy alsa-utils pipewire pipewire-docs pipewire-audio wireplumber pipewire-alsa
+pacman -Suy alsa-utils pipewire pipewire-docs pipewire-audio wireplumber pipewire-alsa pipewire-pulse pavucontrol
 pacman -Suy libinput
 
 pacman -Suy ranger dolphin
@@ -21,6 +21,15 @@ pacman -Suy kubectl helm k9s stern
 pacman -Suy go gopls delve 
 pacman -Suy terraform
 
+pacman -Suy meson ninja
+
 pacman -Suy rg lazygit
 
 pacman -Suy discord obsidian chromium lazygit 
+
+pacman -Suy gimp vlc
+
+# language servers
+# TODO: support
+# I DONT KNOW IF SUDOING THIS IS GOOD npm install -g yaml-language-server
+# pacman -Suy lua-language-server
