@@ -29,6 +29,9 @@ pacman -Suy discord obsidian chromium lazygit
 
 pacman -Suy gimp vlc
 
+# Wayland
+pacman -Syu hyprland hyprpaper swayidle swaylock waybar wofi
+
 # language servers
 # TODO: support
 # I DONT KNOW IF SUDOING THIS IS GOOD npm install -g yaml-language-server

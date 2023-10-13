@@ -18,7 +18,7 @@ function symlink_as_is() {
 symlink_as_is $dot_dir/bin $HOME/.local
 
 # Symlink standard configurations
-for item in nvim rofi xbindkeys bspwm polybar alacritty ranger htop qutebrowser tmux; do
+for item in nvim rofi xbindkeys bspwm polybar alacritty ranger htop qutebrowser tmux hypr waybar; do
   symlink_as_is $dot_dir/$item $cfg_dir
 done
 
