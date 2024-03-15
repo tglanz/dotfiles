@@ -8,6 +8,9 @@
 "alacritty"
     Mod4 + Return
 
+"alacritty -e zellij"
+    Mod4 + Shift + Return
+
 "alacritty"
     Mod4 + c:104
 
