@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
   use 'folke/neodev.nvim'
   use 'neovim/nvim-lspconfig'
   use 'lvimuser/lsp-inlayhints.nvim'
+  use 'mfussenegger/nvim-jdtls' -- Java language server
 
   -- debugging
   use 'mfussenegger/nvim-dap'
