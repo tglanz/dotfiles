@@ -3,7 +3,11 @@
 apt update
 apt upgrade
 
-aot isntall -y neovim
+# Better to just download the latest
+# apt install -y neovim
+
+apt install ripgerp fzf
+
 apt install -y ranger
 
 apt install -y openjdk-19-jre-headless maven
