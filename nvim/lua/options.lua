@@ -7,9 +7,18 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
+-- Color scheme
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern="*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ffffff" })
+  end
+})
+vim.cmd("colorscheme nightfox")
+vim.g.rainbow_active = 1
+
 -- vim.opt.background = dark
 
-vim.g.rainbow_active = 1
 vim.opt.laststatus = 3
 
 -- Disable arrow keys
