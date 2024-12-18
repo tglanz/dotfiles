@@ -27,6 +27,6 @@ vim.keymap.set('n', '<Right>', '<Nop>')
 vim.keymap.set('n', '<Down>', '<Nop>')
 vim.keymap.set('n', '<Left>', '<Nop>')
 
--- In terminal mode, escape should go to normal mode
-vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
-
+-- Quickfix
+vim.keymap.set('n', '<leader>j', '<cmd>cnext<CR>')
+vim.keymap.set('n', '<leader>k', '<cmd>cprev<CR>')

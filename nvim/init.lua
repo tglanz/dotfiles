@@ -1,9 +1,10 @@
-require("options")
-require("plugins")
-
 vim.g.mapleader = ';'
 vim.g.maplocalleader = ';'
 
+require("options")
+require("plugins")
+
+require("setup-terminal-mode")
 require("setup-diagnostics")
 require("setup-telescope")
 require("setup-neodev") -- This must be before lspconfig
