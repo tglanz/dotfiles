@@ -6,6 +6,7 @@ vim.opt.smartcase = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+vim.opt.splitright = true
 
 -- Color scheme
 vim.api.nvim_create_autocmd("ColorScheme", {
@@ -30,3 +31,4 @@ vim.keymap.set('n', '<Left>', '<Nop>')
 -- Quickfix
 vim.keymap.set('n', '<leader>j', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<leader>k', '<cmd>cprev<CR>')
+
