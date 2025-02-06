@@ -39,9 +39,7 @@ return require('packer').startup(function(use)
   }
 
   -- language servers
-  use 'folke/neodev.nvim'
   use 'neovim/nvim-lspconfig'
-  use 'lvimuser/lsp-inlayhints.nvim'
   use 'mfussenegger/nvim-jdtls' -- Java language server
 
   -- debugging
@@ -56,19 +54,19 @@ return require('packer').startup(function(use)
 
   local protocol = require 'vim.lsp.protocol'
 
-  use {
-    "hrsh7th/nvim-cmp",
-    requires = {
-      { "hrsh7th/vim-vsnip" },
-      { "hrsh7th/cmp-path" },
-      { "hrsh7th/cmp-vsnip" },
-      { "hrsh7th/cmp-buffer" },
-      { "hrsh7th/cmp-nvim-lsp" },
-      { "hrsh7th/cmp-nvim-lua" },
-      { "hrsh7th/cmp-nvim-lsp-signature-help" },
-      { "onsails/lspkind-nvim" },
-    },
-  }
+  -- use {
+  --   "hrsh7th/nvim-cmp",
+  --   requires = {
+  --     { "hrsh7th/vim-vsnip" },
+  --     { "hrsh7th/cmp-path" },
+  --     { "hrsh7th/cmp-vsnip" },
+  --     { "hrsh7th/cmp-buffer" },
+  --     { "hrsh7th/cmp-nvim-lsp" },
+  --     { "hrsh7th/cmp-nvim-lua" },
+  --     { "hrsh7th/cmp-nvim-lsp-signature-help" },
+  --     { "onsails/lspkind-nvim" },
+  --   },
+  -- }
 
   use {
     "akinsho/toggleterm.nvim",

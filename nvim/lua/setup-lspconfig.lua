@@ -24,7 +24,7 @@ local servers = {
   lspconfig.rust_analyzer,
   lspconfig.gopls,
   lspconfig.bashls,
-  lspconfig.tsserver,
+  lspconfig.ts_ls,
   lspconfig.csharp_ls,
   lspconfig.clangd,
   lspconfig.terraformls,

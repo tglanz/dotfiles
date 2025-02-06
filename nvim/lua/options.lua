@@ -1,3 +1,10 @@
+# uname :: { version, sysname, release, machine }
+local uname = vim.loop.os_uname()
+
+if uname.sysname == "Windows_NT" then
+  vim.opt.shell = "powershell"
+end
+
 vim.opt.number = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
@@ -15,7 +22,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ffffff" })
   end
 })
-vim.cmd("colorscheme nightfox")
 vim.g.rainbow_active = 1
 
 -- vim.opt.background = dark
