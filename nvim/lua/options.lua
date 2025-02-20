@@ -15,6 +15,9 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.splitright = true
 
+vim.g.mapleader = ";"
+vim.g.maplocalleader = "\\"
+
 -- Color scheme
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern="*",
