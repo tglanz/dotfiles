@@ -41,3 +41,8 @@ vim.keymap.set('n', '<Left>', '<Nop>')
 vim.keymap.set('n', '<leader>j', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<leader>k', '<cmd>cprev<CR>')
 
+-- Page navs
+-- vim.keymap.set('n', '<C-b>', '<C-b>zz') -- full up
+vim.keymap.set('n', '<C-d>', '<C-d>zz') -- full down
+vim.keymap.set('n', '<C-u>', '<C-u>zz') -- half up
+-- vim.keymap.set('n', '<C-e>', '<C-e>zz') -- half down
