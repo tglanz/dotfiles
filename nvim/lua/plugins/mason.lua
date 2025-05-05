@@ -19,6 +19,7 @@ return {
         "pyright",
         "bashls",
         "yamlls",
+        "ts_ls",
       }
     },
   },

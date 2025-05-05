@@ -15,7 +15,7 @@ return {
     vim.keymap.set('n', '<C-p>', builtin.find_files, opts)
     vim.keymap.set('n', '<leader>b', builtin.buffers, opts)
     vim.keymap.set('n', '<C-f>', builtin.live_grep, opts)
-    vim.keymap.set('n', '<leader>ft', builtin.help_tags, opts)
+    vim.keymap.set('n', '<leader>ht', builtin.help_tags, opts)
 
     telescope.setup {
       defaults = {

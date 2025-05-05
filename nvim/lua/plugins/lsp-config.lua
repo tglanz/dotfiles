@@ -61,6 +61,7 @@ function setup_cmp()
   })
 end
 
+-- Might be good to refacto this, similar to https://cmp.saghen.dev/installation
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
@@ -106,9 +107,11 @@ return {
 
     -- local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+    local blink = require('blink.cmp')
+
     for _, server in ipairs(servers) do
       server.setup({
-        -- capabilities = cmp_capabilities,
+        capabilities = blink.get_lsp_capabilities(server.capabilities),
         on_attach = on_attach
       })
     end
