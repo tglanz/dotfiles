@@ -1,5 +1,7 @@
 return {
   "hrsh7th/nvim-cmp",
+  -- NOTE: disable for now, we want to migrate to blink.cmp
+  enabled = false,
   dependencies = {
     'neovim/nvim-lspconfig',
     'hrsh7th/cmp-nvim-lsp',

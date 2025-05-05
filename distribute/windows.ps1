@@ -17,7 +17,7 @@ if (!$localappdata) {
 
 if (-not $isAdmin) {
     # Relaunch the script as administrator
-    Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" -localappdata $localappdata" -Verb RunAs
+    Start-Process pwsh -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" -localappdata $localappdata" -Verb RunAs
     Write-Host "Running: $PSCommandPath -localappdata=$localappdata"
     exit  # Exit the current script after launching the elevated one
 }

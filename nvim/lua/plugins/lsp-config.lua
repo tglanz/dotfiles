@@ -1,14 +1,6 @@
-return {
-  'neovim/nvim-lspconfig',
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "hrsh7th/nvim-cmp",
-  },
-  config = function()
-    local lspconfig = require('lspconfig')
-
-    -- Set up nvim-cmp.
-  local cmp = require'cmp'
+function setup_cmp()
+  -- Set up nvim-cmp.
+  local cmp = require('cmp')
 
   cmp.setup({
     snippet = {
@@ -49,17 +41,6 @@ return {
     })
   })
 
-  -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
-  -- Set configuration for specific filetype.
-  --[[ cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources({
-      { name = 'git' },
-    }, {
-      { name = 'buffer' },
-    })
- })
- require("cmp_git").setup() ]]-- 
-
   -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
@@ -78,7 +59,18 @@ return {
     }),
     matching = { disallow_symbol_nonprefix_matching = false }
   })
+end
 
+return {
+  'neovim/nvim-lspconfig',
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+    -- "hrsh7th/nvim-cmp",
+  },
+  config = function()
+    local lspconfig = require('lspconfig')
+
+    -- setup_cmp()
 
     local on_attach = function(client, bufnr)
       local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -112,11 +104,11 @@ return {
       lspconfig.jdtls,
     }
 
-    local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+    -- local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     for _, server in ipairs(servers) do
       server.setup({
-        capabilities = cmp_capabilities,
+        -- capabilities = cmp_capabilities,
         on_attach = on_attach
       })
     end
@@ -124,7 +116,7 @@ return {
     -- We do this stuff so that we can debug neovim plugins
     lspconfig.lua_ls.setup({
       on_attach = on_attach,
-      capabilities = cmp_capabilities,
+      -- capabilities = cmp_capabilities,
       settings = {
         Lua = {
           runtime = {

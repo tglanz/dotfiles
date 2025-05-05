@@ -2,7 +2,7 @@
 local uname = vim.loop.os_uname()
 
 if uname.sysname == "Windows_NT" then
-  vim.opt.shell = "powershell"
+  vim.opt.shell = "pwsh"
 end
 
 vim.g.mapleader = ";"

@@ -35,7 +35,4 @@ done
 # fi
 # vim +PluginInstall +qall
 
-# neovim
-$script_dir/install-nvim-packages-archlinux.sh
-
 $script_dir/distribute-autorandr.sh
