@@ -14,11 +14,8 @@ function symlink_as_is() {
   ln -sf $1 $2
 }
 
-# Symlink the binaries
-symlink_as_is $dot_dir/bin $HOME/.local
-
 # Symlink standard configurations
-for item in nvim alacritty ranger htop qutebrowser tmux; do
+for item in hyprland waybar wofi; do
   symlink_as_is $dot_dir/$item $cfg_dir
 done
 
