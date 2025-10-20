@@ -2,8 +2,9 @@
     "layer": "top",
     "height": 30,
 
-    // Load modules
-    "include": ["~/.config/waybar/modules.json"],
+    "include": [
+      "~/.config/hypr/waybar/modules.base.json"
+    ],
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],

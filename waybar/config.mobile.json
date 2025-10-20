@@ -1,0 +1,6 @@
+{
+    "include": [
+      "~/.config/hypr/waybar/config.base.json",
+      "~/.config/hypr/waybar/modules.mobile.json"
+    ]
+}

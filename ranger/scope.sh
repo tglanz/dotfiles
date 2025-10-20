@@ -49,6 +49,14 @@ OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
 
 handle_extension() {
     case "${FILE_EXTENSION_LOWER}" in
+        parquet)
+            parquet-cli cat "${FILE_PATH}" 2>/dev/null | jq -s '.' | in2csv -f json && exit 5
+            exit 1;;
+        avro)
+            echo $FILE_PATH > /tmp/log
+            ~/own/avro-cli/.venv/bin/python ~/own/avro-cli/src/avro_cli/cli.py head "${FILE_PATH}" 2>/dev/null | jq -r '.' && exit 5
+            # avro-tools tojson --head "${FILE_PATH}" 2>/dev/null | jq -r '.' && exit 5
+            exit 1;;
         ## Archive
         a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
         rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)

@@ -41,3 +41,15 @@ The configruations are most likely at `/etc/X11/xorg.conf.d`. Add a conf there s
     EndSection
 
 Now enjoy without this stupid touch screen.
+
+### Poor performance of Intellij products on KDE X11
+
+See: https://youtrack.jetbrains.com/issue/JBR-6830/Poor-performance-with-KDE-Plasma-6-X11
+
+Basically configure the VM options (Help | Edit custom VM options) with
+
+    -Dwatch.desktop.geometry=false
+
+### Power profiles
+
+Use `power-profiles-daemon`
