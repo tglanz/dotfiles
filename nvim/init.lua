@@ -1,4 +1,5 @@
 require("options")
+require("keymaps")
 require("setup-terminal-mode")
 require("setup-diagnostics")
 

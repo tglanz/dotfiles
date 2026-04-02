@@ -1,132 +1,23 @@
-function setup_cmp()
-  -- Set up nvim-cmp.
-  local cmp = require('cmp')
-
-  cmp.setup({
-    snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
-
-        -- For `mini.snippets` users:
-        -- local insert = MiniSnippets.config.expand.insert or MiniSnippets.default_insert
-        -- insert({ body = args.body }) -- Insert at cursor
-        -- cmp.resubscribe({ "TextChangedI", "TextChangedP" })
-        -- require("cmp.config").set_onetime({ sources = {} })
-      end,
-    },
-    window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    }),
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
-    }, {
-      { name = 'buffer' },
-    })
-  })
-
-  -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline({ '/', '?' }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-      { name = 'buffer' }
-    }
-  })
-
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    }),
-    matching = { disallow_symbol_nonprefix_matching = false }
-  })
-end
-
--- Might be good to refacto this, similar to https://cmp.saghen.dev/installation
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
-    -- "hrsh7th/nvim-cmp",
   },
   config = function()
-    local lspconfig = require('lspconfig')
-
-    -- setup_cmp()
-
-    local on_attach = function(client, bufnr)
-      local bufopts = { noremap=true, silent=true, buffer=bufnr }
-      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-      vim.keymap.set('n', '<C-l>', vim.lsp.buf.hover, bufopts)
-      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-      vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-      vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-      vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-      vim.keymap.set('n', '<space>wl', function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end, bufopts)
-      vim.keymap.set('n', '<space>d', vim.lsp.buf.type_definition, bufopts)
-      vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-      vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-      vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-      vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
-    end
-
-    local servers = {
-      lspconfig.pyright,
-      lspconfig.rust_analyzer,
-      lspconfig.gopls,
-      lspconfig.bashls,
-      lspconfig.ts_ls,
-      lspconfig.csharp_ls,
-      lspconfig.clangd,
-      lspconfig.terraformls,
-      lspconfig.yamlls,
-      lspconfig.jdtls,
-    }
-
-    -- local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
     local blink = require('blink.cmp')
 
-    for _, server in ipairs(servers) do
-      server.setup({
-        capabilities = blink.get_lsp_capabilities(server.capabilities),
-        on_attach = on_attach
-      })
-    end
+    vim.lsp.config('*', {
+      capabilities = blink.get_lsp_capabilities(),
+    })
 
-    -- We do this stuff so that we can debug neovim plugins
-    lspconfig.lua_ls.setup({
-      on_attach = on_attach,
-      -- capabilities = cmp_capabilities,
+    vim.lsp.config('lua_ls', {
       settings = {
         Lua = {
           runtime = {
             version = 'LuaJIT',
           },
           diagnostics = {
-            globals = {'vim'},
+            globals = { 'vim' },
           },
           workspace = {
             library = vim.api.nvim_get_runtime_file("", true),
@@ -139,5 +30,40 @@ return {
       }
     })
 
+    vim.lsp.enable({
+      'pyright',
+      'rust_analyzer',
+      'gopls',
+      'bashls',
+      'ts_ls',
+      'csharp_ls',
+      'clangd',
+      'terraformls',
+      'yamlls',
+      'jdtls',
+      'lua_ls',
+      'fortls',
+    })
+
+    vim.api.nvim_create_autocmd('LspAttach', {
+      callback = function(args)
+        local bufopts = { noremap = true, silent = true, buffer = args.buf }
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+        vim.keymap.set('n', '<C-l>', vim.lsp.buf.hover, bufopts)
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+        vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+        vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+        vim.keymap.set('n', '<space>wl', function()
+          print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end, bufopts)
+        vim.keymap.set('n', '<space>d', vim.lsp.buf.type_definition, bufopts)
+        vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+        vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+        vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+      end
+    })
   end
 }
