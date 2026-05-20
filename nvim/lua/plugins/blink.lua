@@ -11,7 +11,7 @@ return {
       preset = 'none',
       ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
       ['<C-e>']     = { 'hide' },
-      ['<Tab>']     = { 'accept' },
+      ['<Tab>']     = { 'accept', 'fallback' },
       ['<C-n>']    = { 'select_next', 'fallback' },
       ['<C-p>']    = { 'select_prev', 'fallback' },
       ['<Down>']   = { 'select_next', 'fallback' },
