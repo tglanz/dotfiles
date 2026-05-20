@@ -1,6 +1,6 @@
 return {
-  'phaazon/hop.nvim',
-  branch = 'v2',
+  'smoka7/hop.nvim',
+  version = '*',
   keys = {
     { "<leader>q", ":HopWord<CR>", mode = "n" }
   },
